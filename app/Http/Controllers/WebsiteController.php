@@ -15,7 +15,7 @@ class WebsiteController extends Controller
      */
     public function index()
     {
-        return Website::all();
+        return Website::with(['users', 'posts'])->get();
     }
 
     public function subscribeToWebsite(SubscribeUserWebsiteRequest $request)

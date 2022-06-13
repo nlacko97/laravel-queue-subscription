@@ -12,7 +12,7 @@ RESTful API
 - Run `php artisan migrate --seed` to seed the database
 - Configure `.env` with database access, mail credentials and queue driver
 - Run `php artisan queue:work` to listen to events and `php artisan serve` to run the webserver
-- Run the `Postman` example endpoints
+- Run the `Postman` example endpoints : [Postman JSON link](https://www.getpostman.com/collections/71c35b76dabb919ed63c)
 
 
 <!-- Create a simple subscription platform(only RESTful APIs with MySQL) in which users can subscribe to a website (there can be multiple websites in the system). Whenever a new post is published on a particular website, all it's subscribers shall receive an email with the post title and description in it. (no authentication of any kind is required)
