@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
-Route::apiResource('website', WebsiteController::class)->except(['update', 'destroy']);
+Route::apiResource('website', WebsiteController::class)->only(['index']);
 
 Route::apiResource('post', PostController::class)->only(['store']);
 
