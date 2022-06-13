@@ -13,7 +13,7 @@ RESTful API
 - Configure `.env` with database access, mail credentials and queue driver (`QUEUE_CONNECTION=database`)
 - Run `php artisan queue:work` to listen to events and `php artisan serve` to run the webserver
 - Run the `Postman` example endpoints : [Postman JSON link](https://www.getpostman.com/collections/71c35b76dabb919ed63c)
-
+- Run the `php artisan post:notify` command with either a post ID as argument or `--latest` flag to notify users for the latest post
 
 <!-- Create a simple subscription platform(only RESTful APIs with MySQL) in which users can subscribe to a website (there can be multiple websites in the system). Whenever a new post is published on a particular website, all it's subscribers shall receive an email with the post title and description in it. (no authentication of any kind is required)
 

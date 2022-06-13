@@ -4,8 +4,10 @@ namespace App\Listeners;
 
 use App\Events\PostCreated;
 use App\Mail\PostCreatedMail;
+use App\Models\SentNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,11 +31,6 @@ class SendPostCreatedNotification implements ShouldQueue
      */
     public function handle(PostCreated $event)
     {
-        $post = $event->post;
-        $website = $post->website;
-        $subscribers = $website->users;
-        foreach ($subscribers as $subscriber) {
-            Mail::to($subscriber)->send(new PostCreatedMail($post, $subscriber));
-        }
+        Artisan::call('post:notify', ['post' => $event->post->id]);
     }
 }
