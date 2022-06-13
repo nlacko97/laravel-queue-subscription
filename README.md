@@ -10,7 +10,7 @@ RESTful API
 - Clone the repository
 - Run `composer install`
 - Run `php artisan migrate --seed` to seed the database
-- Configure `.env` with database access, mail credentials and queue driver
+- Configure `.env` with database access, mail credentials and queue driver (`QUEUE_CONNECTION=database`)
 - Run `php artisan queue:work` to listen to events and `php artisan serve` to run the webserver
 - Run the `Postman` example endpoints : [Postman JSON link](https://www.getpostman.com/collections/71c35b76dabb919ed63c)
 
